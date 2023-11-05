@@ -7,17 +7,20 @@ html_code = """
     </section>
   </main>
 </div>
+
+
+you can add your code
 """
 
 # Parse the HTML code
 soup = BeautifulSoup(html_code, 'html.parser')
 
 # Find all elements with a className attribute
-elements_with_class = soup.find_all(attrs={"class": True})
+elements_with_class = soup.find_all(attrs={"classname": True})
 
 # Remove the className attribute from each element
 for element in elements_with_class:
-    del element['class']
+    del element['classname']
 
 # Print the modified HTML
 print(soup.prettify())
